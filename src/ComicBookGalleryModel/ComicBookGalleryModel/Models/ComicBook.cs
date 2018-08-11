@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,15 @@ namespace ComicBookGalleryModel.Models
         //This is the primary key for ComicBook
         public int Id { get; set; }
         //This property creates a link (relation) between the ComicBook table and the Series table
-        public Series Series { get; set; }
+        //[ForeignKey("SeriesRefId")]
+        public int SeriesId { get; set; }       
         public int IssueNumber { get; set; }
         public string Description { get; set; }
         public DateTime PublishedOn { get; set; }
         public decimal? AverageRating { get; set; }
+
+        //navigation property (to link ComicBook to Series)
+        public Series Series { get; set; }
 
         public string DisplayText
         {
