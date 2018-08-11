@@ -14,9 +14,9 @@ namespace ComicBookGalleryModel
         public Context()
         {
             //drops and initializes the database everytime the model changes
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
             //Database.SetInitializer(new CreateDatabaseIfNotExists<Context>());
-            //Database.SetInitializer(new DropCreateDatabaseAlways<Context>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<Context>());
         }
 
         //add a DbSet property for each model in the database to create a table for that model
