@@ -9,6 +9,10 @@ namespace ComicBookGalleryModel.Models
 {
     public class ComicBook
     {
+        public ComicBook()
+        {
+            Artists = new List<Artist>();
+        }
         //This is the primary key for ComicBook
         public int Id { get; set; }
         //This property creates a link (relation) between the ComicBook table and the Series table
@@ -19,8 +23,11 @@ namespace ComicBookGalleryModel.Models
         public DateTime PublishedOn { get; set; }
         public decimal? AverageRating { get; set; }
 
-        //navigation property (to link ComicBook to Series)
+        //navigation property (to link ComicBook to Series using one-to-many)
         public Series Series { get; set; }
+
+        //navigation property (to link ComicBook to Artist using for many-to-many) 
+        public ICollection<Artist> Artists { get; set; }
 
         public string DisplayText
         {
