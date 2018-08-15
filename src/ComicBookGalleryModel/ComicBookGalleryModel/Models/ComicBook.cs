@@ -27,7 +27,7 @@ namespace ComicBookGalleryModel.Models
         public Series Series { get; set; }
 
         //navigation property (to link ComicBook to Artist using for many-to-many) 
-        public ICollection<ComicBookArtist> Artists { get; set; }
+        public virtual ICollection<ComicBookArtist> Artists { get; set; }
 
         public string DisplayText
         {
